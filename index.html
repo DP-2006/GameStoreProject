@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه گیمینگ و سرویس‌های دیجیتال</title>
+    
+    <!-- فراخوانی فونت -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    
+    <!-- لینک کردن فایل استایل -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- هدر -->
+    <header>
+        <div class="logo">GAME<span style="color:white">ZONE</span></div>
+        
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#home" data-i18n="nav_home">خانه</a></li>
+                <li><a href="#pc-games" data-i18n="nav_games">بازی‌های PC</a></li>
+                <li><a href="#digital" data-i18n="nav_digital">محصولات دیجیتال</a></li>
+                <li><a href="#assembly" data-i18n="nav_assembly">سفارش مونتاژ</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <select class="lang-switch" onchange="changeLanguage(this.value)">
+                <option value="fa">FA</option>
+                <option value="ar">AR</option>
+                <option value="en">EN</option>
+            </select>
+            <div class="cart-icon" onclick="openCheckout()">
+                🛒
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- بخش هیرو -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 data-i18n="hero_title">دنیای بی‌نهایت گیمینگ</h1>
+            <p data-i18n="hero_desc">بهترین بازی‌ها، لایسنس‌های اورجینال و سیستم‌های حرفه‌ای را با ما تجربه کنید.</p>
+            <a href="#pc-games" class="btn btn-primary" data-i18n="cta_shop">مشاهده محصولات</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- دسته‌بندی‌ها -->
+        <div class="categories-grid">
+            <div class="category-card" onclick="scrollToSection('pc-games')">
+                <div class="category-icon">🎮</div>
+                <h3 data-i18n="cat_games">بازی‌های کامپیوتری</h3>
+                <p data-i18n="cat_games_desc">کی‌های استیم و اپیک گیمز</p>
+            </div>
+            <div class="category-card" onclick="scrollToSection('digital')">
+                <div class="category-icon">💳</div>
+                <h3 data-i18n="cat_digital">محصولات دیجیتال</h3>
+                <p data-i18n="cat_digital_desc">اشتراک‌ها و نرم‌افزارها</p>
+            </div>
+            <div class="category-card" onclick="scrollToSection('assembly')">
+                <div class="category-icon">🔧</div>
+                <h3 data-i18n="cat_assembly">خدمات مونتاژ</h3>
+                <p data-i18n="cat_assembly_desc">ساخت PC بر اساس بودجه شما</p>
+            </div>
+        </div>
+
+        <!-- محصولات -->
+        <h2 class="section-title" data-i18n="featured_products">محصولات منتخب</h2>
+        <div class="products-grid" id="products-container">
+            <!-- جاوااسکریپت محصولات را اینجا قرار می‌دهد -->
+        </div>
+
+        <!-- خدمات مونتاژ -->
+        <section class="assembly-service" id="assembly">
+            <div class="assembly-content">
+                <div class="assembly-text">
+                    <h3 data-i18n="service_title">خدمات مونتاژ حرفه‌ای</h3>
+                    <p data-i18n="service_desc">سیستم مورد نظر خود را انتخاب کنید، ما آن را با بهترین قطعات مونتاژ کرده و تست‌های فشار (Benchmark) را برای شما انجام می‌دهیم.</p>
+                    <br>
+                    <button class="btn btn-primary" onclick="showConsultationAlert()" data-i18n="btn_consult">درخواست مشاوره رایگان</button>
+                </div>
+                <div class="assembly-img">
+                    <img src="https://picsum.photos/seed/pcbuild/500/300" alt="PC Build">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="saudi-logo-container">
+                        <div class="saudi-logo-text">
+                            <div class="saudi-icon">🌴</div>
+                            <span data-i18n="saudi_center">مركز السعودي للاعمال</span>
+                        </div>
+                    </div>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:10px;" data-i18n="footer_desc">
+                        ارائه دهنده خدمات نوین در زمینه گیمینگ و تجهیزات دیجیتال با مجوز رسمی.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer_links">لینک‌های مفید</h4>
+                    <ul>
+                        <li><a href="#" data-i18n="link_rules">قوانین و مقررات</a></li>
+                        <li><a href="#" data-i18n="link_warranty">ضمانت محصولات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="payment_methods">روش‌های پرداخت</h4>
+                    <div class="payment-methods">
+                        <div class="payment-icon">VISA</div>
+                        <div class="payment-icon">MasterCard</div>
+                        <div class="payment-icon">Mada</div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 GameZone Store. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- مدال پرداخت -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal">
+            <span class="close-modal" onclick="closeCheckout()">&times;</span>
+            <h2 style="color:var(--primary); margin-bottom:20px;" data-i18n="checkout_title">تکمیل خرید</h2>
+            
+            <div class="checkout-summary">
+                <p data-i18n="total_items">تعداد اقلام: <span id="modal-count">0</span></p>
+                <p style="font-weight:bold; font-size:1.2rem; margin-top:5px;" data-i18n="total_price">مبلغ قابل پرداخت: <span id="modal-price">0</span> SAR</p>
+            </div>
+
+            <label class="terms-label">
+                <input type="checkbox" class="terms-input" id="terms-check">
+                <span data-i18n="terms_text">
+                    من <a href="#" style="text-decoration:underline; color:var(--primary);">قوانین و مقررات</a> فروشگاه را مطالعه کرده و می‌پذیرم.
+                </span>
+            </label>
+
+            <button class="btn btn-primary" style="width:100%" onclick="processPayment()" data-i18n="btn_pay">پرداخت نهایی</button>
+            <p id="checkout-error" style="color:var(--danger); font-size:0.8rem; margin-top:10px; display:none;" data-i18n="error_terms">لطفاً تایید کنید که قوانین را خوانده‌اید.</p>
+        </div>
+    </div>
+
+    <!-- نوتیفیکیشن -->
+    <div class="toast" id="toast">محصول به سبد خرید اضافه شد</div>
+
+    <!-- اسکریپت‌ها (ترتیب مهم است: اول دیتا، بعد اپلیکیشن) -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
