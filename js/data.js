@@ -1,4 +1,3 @@
-// لیست محصولات - برای اضافه کردن محصول فقط اینجا را تغییر دهید
 const products = [
     { id: 1, type: 'game', price: 150, img: 'https://picsum.photos/seed/cyberpunk/300/200', title_fa: 'Cyberpunk 2077', title_en: 'Cyberpunk 2077', title_ar: 'سايبربانك 2077' },
     { id: 2, type: 'game', price: 200, img: 'https://picsum.photos/seed/gta5/300/200', title_fa: 'GTA V Premium', title_en: 'GTA V Premium', title_ar: 'جي تي اي 5' },
@@ -6,7 +5,6 @@ const products = [
     { id: 4, type: 'assembly', price: 2500, img: 'https://picsum.photos/seed/rtx4090/300/200', title_fa: 'PC Build RTX 4090', title_en: 'PC Build RTX 4090', title_ar: 'كمبيوتر RTX 4090' }
 ];
 
-// دیکشنری زبان‌ها
 const translations = {
     fa: {
         nav_home: "خانه", nav_games: "بازی‌های PC", nav_digital: "محصولات دیجیتال", nav_assembly: "سفارش مونتاژ",
