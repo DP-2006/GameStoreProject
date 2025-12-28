@@ -1,12 +1,10 @@
 let cart = [];
 let currentLang = 'fa';
 
-// اجرا پس از لود شدن صفحه
 window.onload = function() {
     renderProducts();
 };
 
-// رندر کردن محصولات در HTML
 function renderProducts() {
     const container = document.getElementById('products-container');
     container.innerHTML = '';
@@ -26,7 +24,6 @@ function renderProducts() {
     });
 }
 
-// افزودن به سبد خرید
 function addToCart(id) {
     cart.push(products.find(p => p.id === id));
     updateCartUI();
@@ -44,7 +41,6 @@ function showToast() {
     setTimeout(() => toast.classList.remove('show'), 2000);
 }
 
-// مدیریت مودال خرید
 function openCheckout() {
     if (cart.length === 0) {
         alert(currentLang === 'ar' ? 'السلة فارغة' : (currentLang === 'en' ? 'Cart is empty' : 'سبد خرید خالی است'));
@@ -73,7 +69,6 @@ function processPayment() {
     closeCheckout();
 }
 
-// تغییر زبان
 function changeLanguage(lang) {
     currentLang = lang;
     const doc = document.documentElement;
@@ -82,7 +77,6 @@ function changeLanguage(lang) {
     doc.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
     doc.setAttribute('lang', lang);
 
-    // بروزرسانی تمام تگ‌هایی که خاصیت data-i18n دارند
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang][key]) {
@@ -90,15 +84,14 @@ function changeLanguage(lang) {
         }
     });
 
-    renderProducts(); // دکمه خرید و قیمت‌ها آپدیت شوند
+    renderProducts();
 }
 
-// اسکرول نرم
+
 function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
-// منوی موبایل
 function toggleMenu() {
     document.getElementById('main-nav').classList.toggle('active');
 }
