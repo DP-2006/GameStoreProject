@@ -56,7 +56,3 @@ Users can browse products, switch languages, add items to a cart, and complete a
   - DOM manipulation
   - Event handling
   - Cart and language logic
-
----
-
-## 📂 Project Structure
